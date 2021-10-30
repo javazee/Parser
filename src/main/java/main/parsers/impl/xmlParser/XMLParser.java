@@ -1,7 +1,8 @@
-package parsers.impl.xmlParser;
+package main.parsers.impl.xmlParser;
 
+import main.Building;
 import org.xml.sax.SAXException;
-import parsers.Parser;
+import main.parsers.Parser;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -14,7 +15,7 @@ public class XMLParser implements Parser {
 
     private final String path;
 
-    public HashMap<Integer, Integer> statistics;
+    public HashMap<Building, Integer> statistics;
 
     public XMLParser(String path){
         this.path = path;

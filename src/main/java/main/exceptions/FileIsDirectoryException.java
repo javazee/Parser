@@ -1,4 +1,4 @@
-package exceptions;
+package main.exceptions;
 
 public class FileIsDirectoryException extends Exception {
 

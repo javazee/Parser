@@ -1,7 +1,7 @@
-import exceptions.FileIsDirectoryException;
-import exceptions.NoSuchParserException;
-import parsers.Parser;
-import parsers.ParserFactory;
+import main.exceptions.FileIsDirectoryException;
+import main.exceptions.NoSuchParserException;
+import main.parsers.Parser;
+import main.parsers.ParserFactory;
 
 public class Main {
     public static void main(String[] args) {

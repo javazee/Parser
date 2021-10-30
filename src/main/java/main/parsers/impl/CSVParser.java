@@ -1,6 +1,6 @@
-package parsers.impl;
+package main.parsers.impl;
 
-import parsers.Parser;
+import main.parsers.Parser;
 
 public class CSVParser implements Parser {
 

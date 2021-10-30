@@ -1,9 +1,9 @@
-package parsers;
+package main.parsers;
 
-import exceptions.FileIsDirectoryException;
-import exceptions.NoSuchParserException;
-import parsers.impl.CSVParser;
-import parsers.impl.xmlParser.XMLParser;
+import main.exceptions.FileIsDirectoryException;
+import main.exceptions.NoSuchParserException;
+import main.parsers.impl.CSVParser;
+import main.parsers.impl.xmlParser.XMLParser;
 
 import java.io.File;
 import java.io.IOException;

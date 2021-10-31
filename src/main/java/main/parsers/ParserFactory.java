@@ -31,7 +31,7 @@ public class ParserFactory {
         if (isXML(path)){
             return new XMLParser(path);
         } else if (isCSV(path)){
-            return new CSVParser();
+            return new CSVParser(path);
         } else throw new NoSuchParserException("parser for documents with such format doesn't exist");
     }
 

@@ -6,7 +6,7 @@ import main.parsers.ParserFactory;
 public class Main {
     public static void main(String[] args) {
 
-        String path = "/home/eduard/Рабочий стол/Parser/src/main/resources/address.xml";
+        String path = "/home/eduard/Рабочий стол/Parser/src/main/resources/address.csv";
 
         try {
             Parser parser = ParserFactory.getInstance().getParser(path);

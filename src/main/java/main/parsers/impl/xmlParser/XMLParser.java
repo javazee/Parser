@@ -9,6 +9,7 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.NoSuchFileException;
 import java.util.HashMap;
 
 public class XMLParser implements Parser {
@@ -29,7 +30,9 @@ public class XMLParser implements Parser {
             SaxHandler handler = new SaxHandler();
             parser.parse(file, handler);
             statistics = handler.getStatistics();
-        } catch (ParserConfigurationException | IOException | SAXException ex){
+        } catch (SAXException ex){
+            System.out.println("Файл поврежден и не может быть распарсен");
+        } catch (ParserConfigurationException | IOException ex){
             ex.printStackTrace();
         }
     }

@@ -26,27 +26,22 @@ public class ParserFactory {
         return factory;
     }
 
-    public Parser getParser(String path) throws NoSuchParserException, FileIsDirectoryException {
+    public Parser getParser(String path) throws NoSuchParserException, FileIsDirectoryException, IOException {
         if (new File(path).isDirectory()) throw new FileIsDirectoryException("Файл по указанному пути является директорией");
         if (isXML(path)){
             return new XMLParser(path);
         } else if (isCSV(path)){
             return new CSVParser(path);
-        } else throw new NoSuchParserException("parser for documents with such format doesn't exist");
+        } else throw new NoSuchParserException("Парсер для данного формата файла отсутствует");
     }
 
-    private static boolean isXML(String path) {
-        try {
-            byte[] bytes = Files.readAllBytes(Paths.get(path));
-            return (char) bytes[0] == '<'
-                    && (char) bytes[1] == '?'
-                    && (char) bytes[2] == 'x'
-                    && (char) bytes[3] == 'm'
-                    && (char) bytes[4] == 'l';
-        } catch (IOException e){
-            e.printStackTrace();
-            return false;
-        }
+    private static boolean isXML(String path) throws IOException {
+        byte[] bytes = Files.readAllBytes(Paths.get(path));
+        return (char) bytes[0] == '<'
+                && (char) bytes[1] == '?'
+                && (char) bytes[2] == 'x'
+                && (char) bytes[3] == 'm'
+                && (char) bytes[4] == 'l';
     }
 
     private static boolean isCSV(String path){
